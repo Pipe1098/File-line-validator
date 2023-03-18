@@ -1,13 +1,11 @@
-package Service;
+package com.example.taller.procesador.archivo.Service;
 
-import Model.File;
-import Model.Persona;
+import com.example.taller.procesador.archivo.Model.Persona;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
-
-import javax.print.attribute.standard.Media;
 
 
 public class FileProcessor {

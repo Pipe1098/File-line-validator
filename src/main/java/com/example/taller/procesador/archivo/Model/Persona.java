@@ -1,4 +1,4 @@
-package Model;
+package com.example.taller.procesador.archivo.Model;
 
 public class Persona {
 
@@ -53,5 +53,19 @@ public class Persona {
 
     public String getJobTitle() {
         return JobTitle;
+    }
+
+
+    public String toString() {
+        return "Persona{" +
+                "Index='" + Index + '\'' +
+                ", User='" + User + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Phone='" + Phone + '\'' +
+                ", DateBirh='" + DateBirh + '\'' +
+                ", JobTitle='" + JobTitle + '\'' +
+                '}';
     }
 }
