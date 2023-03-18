@@ -6,8 +6,7 @@ import com.example.taller.procesador.archivo.Model.Persona;
 import java.util.List;
 
 public class ProcessorService {
-    private int contadorLineaValida = 0;
-    private int contadorLineaInvalida = 0;
+
     private CsvReader lectorArchivo;
     private FileProcessor procesadorArchivo;
 
