@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 public class FileController {
     private final CsvReader csvReader;
+    private final ProcessorService procesadorService = new ProcessorService();
     @Autowired
     public FileController(CsvReader csvReader) {
         this.csvReader = csvReader;

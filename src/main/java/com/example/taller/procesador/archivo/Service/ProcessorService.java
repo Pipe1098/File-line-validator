@@ -6,14 +6,17 @@ import com.example.taller.procesador.archivo.Model.Persona;
 import java.util.List;
 
 public class ProcessorService {
-    private int contadorLineaValida = 0;
-    private int contadorLineaInvalida = 0;
+
     private CsvReader lectorArchivo;
     private FileProcessor procesadorArchivo;
 
+    public ProcessorService(){
 
-    public FileResponse procesar(File file){
-        List<Persona> listaPersona =  lectorArchivo.read(file.getRuta());
+    }
+
+    public FileResponse procesar(List<Persona> listaPersona){
+         int contadorLineaValida = 0;
+         int contadorLineaInvalida = 0;
         for (Persona persona: listaPersona) {
             boolean esValido = FileProcessor.pasarValidar(persona); // comunicacion con el otro servicio.
             if(esValido){
