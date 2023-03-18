@@ -1,4 +1,4 @@
-package Model;
+package com.example.taller.procesador.archivo.Model;
 
 public class File {
     
