@@ -1,20 +1,16 @@
 package com.example.taller.procesador.archivo.Service;
 
+import java.util.List;
+
 public class FileResponse {
     private int lineasValidas;
     private int lineasInvalidas;
+    private List<Integer> listaPos ; //posicion de las lineas validas
 
-    public FileResponse(int contadorLineaValida, int contadorLineaInvalida) {
-        this.lineasValidas = lineasValidas;
-        this.lineasInvalidas = lineasInvalidas;
-    }
-
-    public int getLineasValidas() {
-        return lineasValidas;
-    }
-
-    public int getLineasInvalidas() {
-        return lineasInvalidas;
+    public FileResponse(int contadorLineaValida, int contadorLineaInvalida, List<Integer> posicionLineasValidas) {
+        this.lineasValidas = contadorLineaValida;
+        this.lineasInvalidas = contadorLineaInvalida;
+        this.listaPos =posicionLineasValidas;
     }
 
     @Override
@@ -22,6 +18,7 @@ public class FileResponse {
         return "FileResponse{" +
                 "lineasValidas=" + lineasValidas +
                 ", lineasInvalidas=" + lineasInvalidas +
+                ", listaPosValidas=" + listaPos +
                 '}';
     }
 }
