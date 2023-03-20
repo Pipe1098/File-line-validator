@@ -13,5 +13,8 @@ public class File {
     public String getRuta(){
         return this.ruta;
     }
-    
+
+    public String getTipo() {
+        return tipo;
+    }
 }

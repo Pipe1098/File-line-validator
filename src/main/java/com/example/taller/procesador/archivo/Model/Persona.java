@@ -6,20 +6,19 @@ public class Persona {
     private String User;
     private String Name;
     private String Sex;
-
     private String Email;
     private String Phone;
-    private String DateBirh;
+    private String DateBirth;
     private String JobTitle;
 
-    public Persona(String index, String user, String name, String sex, String email, String phone, String dateBirh, String jobTitle) {
+    public Persona(String index, String user, String name, String sex, String email, String phone, String dateBirth, String jobTitle) {
         Index = index;
         User = user;
         Name = name;
         Sex = sex;
         Email = email;
         Phone = phone;
-        DateBirh = dateBirh;
+        DateBirth = dateBirth;
         JobTitle = jobTitle;
     }
 
@@ -47,8 +46,8 @@ public class Persona {
         return Phone;
     }
 
-    public String getDateBirh() {
-        return DateBirh;
+    public String getDateBirth() {
+        return DateBirth;
     }
 
     public String getJobTitle() {
@@ -64,7 +63,7 @@ public class Persona {
                 ", Sex='" + Sex + '\'' +
                 ", Email='" + Email + '\'' +
                 ", Phone='" + Phone + '\'' +
-                ", DateBirh='" + DateBirh + '\'' +
+                ", DateBirth='" + DateBirth + '\'' +
                 ", JobTitle='" + JobTitle + '\'' +
                 '}';
     }
