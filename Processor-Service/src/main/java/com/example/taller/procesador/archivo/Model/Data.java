@@ -34,4 +34,11 @@ public class Data {
         this.year = year;
     }
 
+    public String getInjuryLocation() {
+        return injuryLocation;
+    }
+
+    public String getReportType() {
+        return reportType;
+    }
 }
