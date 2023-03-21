@@ -15,7 +15,7 @@ public class FileProcessor {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        String url = "http://localhost:8090/ArchivosCSV";
+        String url = "http://localhost:8082/ArchivosCSV";
         HttpEntity<Persona> requestPersona = new HttpEntity<>(persona,headers);
         boolean respuesta = restTemplate.postForObject(url,requestPersona, boolean.class);
 
@@ -26,7 +26,7 @@ public class FileProcessor {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        String url = "http://localhost:8090/ArchivosXML";
+        String url = "http://localhost:8082/ArchivosXLS";
         HttpEntity<Data> requestData = new HttpEntity<>(data,headers);
         boolean respuesta = restTemplate.postForObject(url,requestData, boolean.class);
 

@@ -4,7 +4,7 @@ import com.example.Validador.Model.Data;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ValidationServiceXls {
+public class ValidationServiceXLS {
 
     public boolean validarCol(Data data) {
         boolean esValid = true;
