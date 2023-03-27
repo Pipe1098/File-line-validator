@@ -30,24 +30,6 @@ public class FileProcessor {
         HttpEntity<Data> requestData = new HttpEntity<>(data,headers);
         boolean respuesta = restTemplate.postForObject(url,requestData, boolean.class);
 
-
-/*       RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<Foo> request = new HttpEntity<>(new Foo("bar"));
-        ResponseEntity<Foo> response = restTemplate
-                .exchange(fooResourceUrl, HttpMethod.POST, request, Foo.class);
-
-        Assertions.assertEquals(response.getStatusCode(), HttpStatus.CREATED);
-
-        Foo foo = response.getBody();
-
-        Assertions.assertNotNull(foo);
-        Assertions.assertEquals(foo.getName(), "bar");
-
-        1 enviar una peticion POST al micrservicio de validacion.
-         post request (persona body)
-        restTemplate
-         hacerele el return a ;la respuesta.*/
-
         return respuesta;
     }
 
