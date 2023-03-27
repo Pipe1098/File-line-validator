@@ -31,8 +31,6 @@ public class ProcessorService {
                 i++;
             }
         }
-      /*  System.out.println("El numero de lineas validas es:"+ contadorLineaValida);
-        System.out.println("El numero de lineas invalidas es:"+contadorLineaInvalida);*/
 
         FileResponse resultado = new FileResponse(contadorLineaValida,contadorLineaInvalida,listaPos);
         System.out.println(resultado.toString());
@@ -67,7 +65,6 @@ public class ProcessorService {
         } else if (file.getTipo().contains("xlsx")) {
             List<Data> listData = xlsReader.read(file.getRuta());
             FileResponse lineas = procesarXML(listData);
-            // listData.forEach(System.out::println);
             return lineas.toString();
         }
         else return "Archivo no permitido";
