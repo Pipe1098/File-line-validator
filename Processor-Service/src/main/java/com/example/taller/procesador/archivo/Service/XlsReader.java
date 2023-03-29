@@ -21,7 +21,7 @@ public class XlsReader implements FilesReader {
             Workbook wb = WorkbookFactory.create(inp);
             Sheet sheet = wb.getSheetAt(0);
             int iRow=1;
-            Row row = sheet.getRow(iRow); //En qué fila empezar ya dependerá también de si tenemos, por ejemplo, el título de cada columna en la primera fila
+            Row row = sheet.getRow(iRow); 
             while(row!=null)
             {
                 Data data=new Data(row.getCell(1).getStringCellValue(),

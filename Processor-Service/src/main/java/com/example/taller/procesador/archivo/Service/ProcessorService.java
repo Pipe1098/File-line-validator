@@ -31,21 +31,19 @@ public class ProcessorService {
                 i++;
             }
         }
-      /*  System.out.println("El numero de lineas validas es:"+ contadorLineaValida);
-        System.out.println("El numero de lineas invalidas es:"+contadorLineaInvalida);*/
 
         FileResponse resultado = new FileResponse(contadorLineaValida,contadorLineaInvalida,listaPos);
         System.out.println(resultado.toString());
 
         return resultado;
     }
-    public FileResponse procesarXML(List<Data> listData){
+    public FileResponse procesarXLS(List<Data> listData){
         int contadorLineaValida = 0;
         int contadorLineaInvalida = 0;
         List<Integer> listaPos = new ArrayList<>();
         int i=0;
         for (Data data: listData) {
-            boolean esValido = FileProcessor.pasarValidarXML(data); // comunicacion con el otro servicio.
+            boolean esValido = FileProcessor.pasarValidarXLS(data); // comunicacion con el otro servicio.
             if(esValido){
                 contadorLineaValida++;
                 listaPos.add(listData.indexOf(data));
@@ -59,17 +57,18 @@ public class ProcessorService {
         return resultado;
     }
 
-    public  String procesar(File file, CsvReader csvReader, XlsReader xlsReader){
-        if (file.getTipo().contains("csv")) {
+    public String procesar(File file, CsvReader csvReader, XlsReader xlsReader) {
+        String tipoArchivo = file.getTipo().toLowerCase();
+        if (tipoArchivo.equals("csv") || tipoArchivo.equals("opencsv")) {
             List<Persona> personas = csvReader.read(file.getRuta());
             FileResponse lineas = procesarCSV(personas);
             return lineas.toString();
-        } else if (file.getTipo().contains("xlsx")) {
+        } else if (tipoArchivo.equals("xlsx") || tipoArchivo.equals("xls") || tipoArchivo.equals("excel")) {
             List<Data> listData = xlsReader.read(file.getRuta());
-            FileResponse lineas = procesarXML(listData);
-            // listData.forEach(System.out::println);
+            FileResponse lineas = procesarXLS(listData);
             return lineas.toString();
+        } else {
+            return "Archivo no permitido";
         }
-        else return "Archivo no permitido";
     }
 }
